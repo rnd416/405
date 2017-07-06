@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+.carousel.slide {
+	height: 500px;
+	width: 1000px;
+	margin-left: 400px;
+}
+.navbar.navbar-default {
+   width: 1000px;
+   margin-left: 400px;
+}
