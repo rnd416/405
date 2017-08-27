@@ -1,0 +1,369 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+body {
+	background-color: black;
+	color: white;
+	line-height: 1;
+	text-align: center;
+	margin: 0;
+}
+ul {
+	padding: 0;
+	margin: 0;  
+}
+a {
+	text-decoration: none;
+}
+.container {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	z-index: 2;
+	padding: 0;
+	margin: 0;
+}
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: white;
+    margin: 5px;
+}
+
+.navigation-logo {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+	background-size: cover;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	z-index: 10;
+}
+.navigation-list {
+	list-style-type: none;
+	display: flex;
+	margin: 0;
+	align-items: center;
+	position: fixed;
+	left: 150px;
+	top: 50px;
+}
+.navigation-item:not(:first-child) {
+	padding-left: 50px;
+}
+.navigation-link {
+	font: 700 15px/50px Raleway,sans-serif;
+	color: white;
+	text-decoration: none;
+	letter-spacing: 1.5px;
+	transition: opacity .4s ease;
+	opacity: 0.5;
+	display: block;
+	text-transform: uppercase;
+}
+.navigation-link:hover {
+	color: white;
+	text-decoration: none;
+	opacity: 0.75;
+}
+.navigation-link.is-active {
+	color: white;
+	text-decoration: none;
+	opacity: 1;
+}
+.navigation-button {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	top: 50px;
+	right: 50px;
+	background: none;
+	color: white;
+	outline: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	visibility: hidden;
+	transition: color .4s ease;
+	z-index: 3;
+}
+.navigation-button::after {
+	background: currentColor;
+	box-shadow: 0 -5px 0 currentColor,0 5px 0 currentColor;
+	content: "";
+	height: 1px;
+	width: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translateX(-50%);
+}
+.languages {
+	position: fixed;
+	top: 50px;
+	right: 50px;
+	display: flex;
+	align-items: center;
+}
+.languages-item {
+	list-style-type: none;
+}
+
+.languages-button {
+	background: none;
+	border: none;
+	display: inline-block;
+	letter-spacing: 0.1rem;
+	line-height: 50px;
+	outline: 0;
+	transition: opacity .4s ease;
+	opacity: 0.5;
+	font-size: 14px;
+	font-family:'Raleway', sans-serif;
+	color: white;
+}
+.languages-button.is-active {
+	opacity: 1;
+}
+.languages-button:hover {
+	opacity: 0.75;
+}
+@media (max-width: 1023px) {
+	.languages {
+		left: 125px;
+		right: auto;
+	}
+	.navigation-list {
+		position: fixed;
+		visibility: hidden;
+	}
+	.navigation-button {
+		visibility: visible;
+	}
+	.navigation-overlay {
+		background-color: white;
+		display: table;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		transition: opacity .4s ease,visibility .4s ease;
+		opacity: 0;
+		visibility: hidden;
+		top: 0;
+		left: 0;
+		z-index: 3;
+	}
+	.navigation-list {
+		display: table-cell;
+		opacity: 0;
+		transition: opacity .4s ease,visibility .4s ease;
+		position: static;
+		vertical-align: middle;
+		visibility: hidden;
+		padding-left:0;
+	}
+	.navigation-item {
+		display: block;
+		width: 100%;
+	}
+	.navigation-item:not(:first-child) {
+		padding-left: 0;
+	}
+	.navigation-link {
+		color: black;
+		font: 700 50px/100px Raleway,sans-serif;
+		letter-spacing: 0;
+		text-align: left;
+		text-transform: none;
+		padding-left: 50px;
+	}
+	.navigation-link:hover {
+		color: black;
+	}
+	.navigation.is-active .navigation-overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+	.navigation.is-active .navigation-list {
+		visibility: visible;
+		opacity: 1;
+	}
+	.navigation.is-active .navigation-link.is-active {
+		color: black;
+	}
+	.navigation.is-active .navigation-button {
+		color: black;
+	}
+	.navigation.is-active .languages {
+		visibility: hidden;
+	}
+}
+@media (max-width: 767px) {
+	.navigation-logo {
+		left: 25px;
+		top: 25px;
+	}
+	.navigation-button {
+		right: 25px;
+		top: 25px;
+	}
+	.languages {
+		left: 95px;
+		top: 25px;
+	}
+	.navigation-link {
+		padding-left: 25px;
+		font-size: 30px;
+		line-height: 70px;
+	}
+}
+.work {
+	position: absolute;
+	left: 50px;
+	bottom: 50px;
+	right: 50px;
+	top: 150px;
+	overflow: hidden;
+}
+.work-item, .work-list {
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+.work-list {
+	font-size: 0;
+	white-space: nowrap;
+}
+.work-item {
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+.work-item.is-active {
+	opacity: 1;
+	visibility: visible;
+}
+.work-image {
+	background-size: cover;
+	background-position: 50%;
+	height: 100%;
+	width: calc(100vw - 100px);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.work-image:after {
+	background: linear-gradient(180deg,transparent 75%,rgba(0,0,0,.5));
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	left: 0;
+	content: "";
+	z-index: 2;
+}
+.work-title {
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+	overflow: hidden;
+	z-index: 2;
+}
+.work-text, .work-text span {
+	display: inline-block;
+	vertical-align: middle;
+}
+.work-text {
+	color: white;
+	font: 700 30px/30px Raleway,sans-serif;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+.work-pagination {
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	font-size: 0;
+	z-index: 2;
+}
+.work-pagination-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0;
+	height: 30px;
+	outline: none;
+	padding: 0;
+	position: relative;
+	vertical-align: middle;
+	width: 30px;
+}
+.work-pagination-button:after {
+	background: white;
+	border: none;
+	border-radius: 50%;
+	content: "";
+	height: 5px;
+	left: 50%;
+	opacity: .5;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	transition: opacity .4s ease;
+	width: 5px;
+}
+.work-pagination-button.is-active:after {
+	opacity: 1;
+}
+.work-pagination-button:hover:after {
+	opacity: .75;
+}
+.work-navigation-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	height: 50px;
+	padding: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	outline: none;
+	position: absolute;
+	transition: opacity .4s ease;
+	width: 125px;
+	z-index: 2;
+}
+.work-navigation-button-previous {
+	left: 0;
+}
+.work-navigation-button-next {
+	right: 0;
+}
+.work-navigation-button:after {
+	border-color: white;
+	border-style: solid;
+	content: "";
+	display: block;
+	height: 20px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transition: border-color .4s ease;
+	width: 20px;
+}
+.work-navigation-button-previous:after {
+	border-width: 0 0 1px 1px;
+	transform: translate(-25%,-50%) rotate(45deg);
+}
+.work-navigation-button-next:after {
+	border-width: 1px 1px 0 0;
+	transform: translate(-75%,-50%) rotate(45deg);
+}
