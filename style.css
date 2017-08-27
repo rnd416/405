@@ -104,18 +104,18 @@ a {
 	left: 50%;
     transform: translateX(-50%);
 }
-.languages {
+.login {
 	position: fixed;
 	top: 50px;
 	right: 50px;
 	display: flex;
 	align-items: center;
 }
-.languages-item {
+.login-item {
 	list-style-type: none;
 }
 
-.languages-button {
+.login-button {
 	background: none;
 	border: none;
 	display: inline-block;
@@ -128,14 +128,14 @@ a {
 	font-family:'Raleway', sans-serif;
 	color: white;
 }
-.languages-button.is-active {
+.login-button.is-active {
 	opacity: 1;
 }
-.languages-button:hover {
+.login-button:hover {
 	opacity: 0.75;
 }
 @media (max-width: 1023px) {
-	.languages {
+	.login {
 		left: 125px;
 		right: auto;
 	}
@@ -200,7 +200,7 @@ a {
 	.navigation.is-active .navigation-button {
 		color: black;
 	}
-	.navigation.is-active .languages {
+	.navigation.is-active .login {
 		visibility: hidden;
 	}
 }
@@ -213,7 +213,7 @@ a {
 		right: 25px;
 		top: 25px;
 	}
-	.languages {
+	.login {
 		left: 95px;
 		top: 25px;
 	}

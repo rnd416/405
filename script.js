@@ -3,8 +3,8 @@ $('.navigation-link').on('click', function() {
 	$(this).addClass('is-active');
 });
 
-$('.languages-button').on('click', function() {
-	$('.languages-button.is-active').removeClass('is-active');
+$('.login-button').on('click', function() {
+	$('.login-button.is-active').removeClass('is-active');
 	$(this).addClass('is-active');
 });
 $('.navigation-button').on('click', function() {
